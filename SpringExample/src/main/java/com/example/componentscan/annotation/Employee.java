@@ -1,5 +1,6 @@
 package com.example.componentscan.annotation;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -15,6 +16,9 @@ public class Employee {
 
     @Value("#{4*4}")
     private double salary;
+
+    @Autowired
+    private Room room;
 
     public int getEmployeeId() {
         return employeeId;
@@ -55,6 +59,7 @@ public class Employee {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", salary=" + salary +
+                ", room=" + room +
                 '}';
     }
 }
